@@ -4,39 +4,32 @@ import Background from "./svg/background"
 import Logo from "./svg/logo"
 
 const Header = ({ subTitle }) => (
-  <>
+  <Wrapper>
     <Container>
       <Logo />
       <h3>{subTitle}</h3>
     </Container>
     <Background />
-  </>
+  </Wrapper>
 )
 
+const Wrapper = styled.div`
+  position: relative;
+`
+
 const Container = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
   h3 {
     text-align: center;
     color: white;
     font-weight: 300;
-    @media screen and (max-width: 840px) {
+    @media screen and (max-width: 640px) {
       display: none;
     }
-  }
-
-  position: absolute;
-  width: 300px;
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  margin-left: -150px;
-  @media screen and (max-width: 992px) {
-    top: 20%;
-  }
-  @media screen and (max-width: 720px) {
-    top: 8%;
-  }
-  @media screen and (max-width: 480px) {
-    top: 3%;
   }
 `
 
