@@ -32,6 +32,8 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 300;
     font-family: "Open Sans";
     color: #393939;
+    position: relative;
+    padding-bottom: 20rem;
   }
   h1 {
     font-family: 'Baloo Bhai';
@@ -294,12 +296,10 @@ const BlackBox = styled.div`
 
 const Footer = styled.div`
   width: 100%;
-  height: 300px;
+  height: 200px;
   background-color: #525fb7;
   position: absolute;
-  right: 0;
   bottom: 0;
-  left: 0;
 `
 
 export default IndexPage
