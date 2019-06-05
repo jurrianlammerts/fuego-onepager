@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1112px" height="834px" viewBox="0 0 1112 834" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>10.5” iPad Air</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="70.7636364" cy="58.38" rx="70.7636364" ry="58.38"></ellipse>
+    </defs>
+    <g id="10.5”-iPad-Air" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Layouts-/-Card" transform="translate(556.000000, 413.500000) rotate(-360.000000) translate(-556.000000, -413.500000) translate(0.000000, -7.000000)">
+            <g transform="translate(0.000000, 7.000000)">
+                <g transform="translate(-0.000000, -0.000000)">
+                    <g id="Window">
+                        <g>
+                            <rect id="Rectangle" fill="#C6E6FF" x="0" y="0" width="1112" height="834" rx="6"></rect>
+                            <g id="Top-bar">
+                                <path d="M6,0 L1106,0 C1109.31371,-6.08718376e-16 1112,2.6862915 1112,6 L1112,66.72 L0,66.72 L0,6 C-4.05812251e-16,2.6862915 2.6862915,6.08718376e-16 6,0 Z" id="Rectangle" fill="#9CD3FF"></path>
+                                <circle id="Oval" fill="#77BAF4" cx="11" cy="8" r="3"></circle>
+                                <circle id="Oval" fill="#77BAF4" cx="21" cy="8" r="3"></circle>
+                                <circle id="Oval" fill="#77BAF4" cx="31" cy="8" r="3"></circle>
+                            </g>
+                        </g>
+                    </g>
+                    <rect id="Rectangle" fill="#1583D8" x="353.818182" y="187.65" width="404.363636" height="458.7" rx="3"></rect>
+                    <g id="User" transform="translate(485.236364, 237.690000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#C6E6FF" xlink:href="#path-1"></use>
+                    </g>
+                    <rect id="Text" fill="#1583D8" x="394.254545" y="684" width="323.490909" height="16.68" rx="8.34"></rect>
+                    <rect id="Text" fill="#1583D8" x="394.254545" y="717.36" width="323.490909" height="16.68" rx="8.34"></rect>
+                    <rect id="Text" fill="#1583D8" x="394.254545" y="750.72" width="171.854545" height="16.68" rx="8.34"></rect>
+                    <rect id="Text-Copy" fill="#C6E6FF" x="480" y="524" width="171.854545" height="48" rx="24"></rect>
+                </g>
+            </g>
+            <circle id="Oval-Copy-3" fill="#9CD3FF" cx="21" cy="17" r="17"></circle>
+            <circle id="Oval" fill="#77BAF4" cx="53" cy="42" r="14"></circle>
+            <circle id="Oval-Copy" fill="#77BAF4" cx="89" cy="42" r="14"></circle>
+            <circle id="Oval-Copy-2" fill="#77BAF4" cx="125" cy="42" r="14"></circle>
+        </g>
+        <rect id="Rectangle" fill="#1583D8" x="458" y="221" width="213" height="156"></rect>
+        <g id="placeholder" transform="translate(525.000000, 283.000000)" fill="#C6E6FF" fill-rule="nonzero">
+            <path d="M53.773832,9.21383859 C41.4732283,-3.07127953 21.5285047,-3.07127953 9.22616798,9.21383859 C-1.85789252,20.283945 -3.10562916,41.1277993 6.30091874,53.6534967 L31.5,90 L56.6990813,53.6534967 C66.1056292,41.1277993 64.8578925,20.283945 53.773832,9.21383859 Z M31.8067353,41.5379956 C26.0636808,41.5379956 21.4089299,36.8891047 21.4089299,31.1532803 C21.4089299,25.4174559 26.0636808,20.7685651 31.8067353,20.7685651 C37.5497897,20.7685651 42.2045406,25.4174559 42.2045406,31.1532803 C42.2045406,36.8891047 37.5497897,41.5379956 31.8067353,41.5379956 Z" id="Shape"></path>
+        </g>
+        <text id="locatie-gevonden" font-family="Helvetica" font-size="45" font-weight="normal" fill="#C6E6FF">
+            <tspan x="499.460938" y="438">locatie </tspan>
+            <tspan x="465.656006" y="492">gevonden</tspan>
+        </text>
+        <text id="Koningsweg-10-120" font-family="AmericanTypewriter, American Typewriter" font-size="20" font-weight="normal" fill="#C6E6FF">
+            <tspan x="470.34" y="497">Koningsweg 10-120</tspan>
+        </text>
+        <text id="bevestig" font-family="AmericanTypewriter, American Typewriter" font-size="20" font-weight="normal" fill="#1583D8">
+            <tspan x="524.95" y="555">bevestig</tspan>
+        </text>
+    </g>
+</svg>

@@ -1,9 +1,19 @@
 import React from "react"
 
 const sectionThree = () => (
-  <svg width="834px" height="854px" viewBox="0 0 834 854">
-    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-      <g id="Desktop-Copy" transform="translate(-9.000000, -3377.000000)">
+  <svg
+    width="834px"
+    height="999px"
+    viewBox="0 0 834 999"
+  >
+    <g
+      id="Page-1"
+      stroke="none"
+      strokeWidth="1"
+      fill="none"
+      fillRule="evenodd"
+    >
+      <g id="Desktop-Copy" transform="translate(-9.000000, -3232.000000)">
         <circle
           id="Oval-Copy-6"
           fill="#525FB7"
@@ -20,17 +30,17 @@ const sectionThree = () => (
         />
         <text
           id="User-journey"
-          fontFamily="Baloo Bhai"
+          fontFamily="BalooBhai-Regular, Baloo Bhai"
           fontSize="58"
           fontWeight="normal"
           fill="#525FB7"
         >
-          <tspan x="73" y="4114">
+          <tspan x="73" y="4118">
             User journey
           </tspan>
         </text>
         <path
-          d="M840.5,3377 L840.5,3475"
+          d="M840.5,3232.5 L840.5,3475"
           id="Path-5"
           stroke="#525FB7"
           strokeWidth="5"
