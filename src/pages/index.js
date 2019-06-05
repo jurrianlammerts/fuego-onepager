@@ -16,7 +16,6 @@ import IconTwo from "../components/svg/icons/two"
 import IconThree from "../components/svg/icons/three"
 
 const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap');
   html {
     box-sizing: border-box;
     font-size: 10px;
