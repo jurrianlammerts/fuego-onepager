@@ -40,7 +40,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 100;
     margin-bottom: 0;
   }
-  a {
+  .link {
     background:
      linear-gradient(
        to bottom, #FBB5B5 0%,
@@ -55,7 +55,37 @@ const GlobalStyles = createGlobalStyle`
     :hover {
       background-size: 4px 50px;
     }
-}
+  }
+  /* arrow buttons */
+.button {
+  display:table;
+  margin:0 auto;
+  text-decoration:none;
+  color:#fff;
+  }
+span {
+  display:table-cell;
+  vertical-align:middle;
+  background-color:#FBB5B5;
+  padding: 0 .5em 0 1em; 
+  line-height:1;
+  }
+.button:before, .button:after {
+  display:table-cell;
+  content:'';
+  border-top:1.5em solid;
+  border-bottom:1.5em solid;
+  border-left:1.5em solid;
+  }
+.button:after {
+  border-top-color:transparent;
+  border-bottom-color:transparent;
+  border-left-color:#FBB5B5;
+  }
+
+/* hover */
+.button:hover span {background-color:#525fb7;}
+.button:hover:after {border-left-color:#525fb7;}
 `
 
 class IndexPage extends Component {
@@ -93,7 +123,7 @@ class IndexPage extends Component {
             <p>
               Tijdens het project Medialab bundelen wij van team Fuego al onze
               disciplines om samen voor de{" "}
-              <a href="https://vr-rr.nl/">
+              <a className="link" href="https://vr-rr.nl/">
                 Veiligheidsregio Rotterdam-Rijnmond
               </a>{" "}
               een innovatief concept te bedenken.
@@ -264,6 +294,12 @@ class IndexPage extends Component {
               <Img fixed={data.prototypeThree.childImageSharp.fixed} />
               <Img fixed={data.prototypeFour.childImageSharp.fixed} />
             </div>
+            <a
+              className="button"
+              href="https://blackbox-app-p1.guidovdriet.now.sh/"
+            >
+              <span>Link naar prototype</span>
+            </a>
           </div>
         </Prototype>
         <Testing>
@@ -278,6 +314,9 @@ class IndexPage extends Component {
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
+          </div>
+          <div className="image">
+            <Img fixed={data.sensorData.childImageSharp.fixed} />
           </div>
           <div className="diagonal-line" />
         </Testing>
@@ -295,6 +334,35 @@ class IndexPage extends Component {
             </div>
           </div>
         </Product>
+        <Prototype>
+          <div className="diagonal-line" />
+          <h1>Final prototype</h1>
+          <div className="image-container">
+            <div className="images">
+              <Img fixed={data.interfaceOne.childImageSharp.fixed} />
+              <Img fixed={data.interfaceTwo.childImageSharp.fixed} />
+            </div>
+            <a className="button" href="https://app.guidovdriet.now.sh/">
+              <span>Link naar prototype</span>
+            </a>
+          </div>
+        </Prototype>
+        <Testing>
+          <div className="spacing" />
+          <h1>Presentation</h1>
+          <div className="image-container">
+            <div className="images">
+              <Img fixed={data.presentationOne.childImageSharp.fixed} />
+              <Img fixed={data.presentationTwo.childImageSharp.fixed} />
+            </div>
+          </div>
+          <a
+            className="button"
+            href="https://drive.google.com/a/hr.nl/file/d/1YEuy3tnZanHBvzkfqUy1mKN1zl_U7lrS/view?usp=sharing"
+          >
+            <span>Link naar presentatie</span>
+          </a>
+        </Testing>
         <Footer>
           <button onClick={() => this.scrollToTop()}>
             <i className="arrow-up" />
@@ -451,10 +519,9 @@ const Concepten = styled.div`
 
 const Testing = styled.div`
   width: 100%;
-  height: 500px;
+  height: 900px;
   position: relative;
   z-index: 10;
-
   h1 {
     text-align: center;
     color: #525fb7;
@@ -469,10 +536,32 @@ const Testing = styled.div`
     z-index: -1;
   }
   .video {
-    margin: 24px;
+    margin: 64px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+  }
+  .image {
+    left: 50%;
+    position: absolute;
+    height: 450px;
+    margin-top: 550px;
+    margin-left: 75px;
+    transform: translateX(-50%);
+  }
+  .image-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .images {
+    margin: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .spacing {
+    height: 100px;
   }
 `
 
@@ -695,6 +784,41 @@ export const query = graphql`
     testPhotoFour: file(relativePath: { eq: "test-display.png" }) {
       childImageSharp {
         fixed(width: 555, height: 420) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    sensorData: file(relativePath: { eq: "mq2-data.png" }) {
+      childImageSharp {
+        fixed(width: 900, height: 450) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    interfaceOne: file(relativePath: { eq: "final-interface.png" }) {
+      childImageSharp {
+        fixed(width: 600, height: 450) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    interfaceTwo: file(relativePath: { eq: "final-interface-2.png" }) {
+      childImageSharp {
+        fixed(width: 600, height: 450) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    presentationOne: file(relativePath: { eq: "presentation-1.png" }) {
+      childImageSharp {
+        fixed(width: 600, height: 450) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    presentationTwo: file(relativePath: { eq: "presentation-2.png" }) {
+      childImageSharp {
+        fixed(width: 600, height: 450) {
           ...GatsbyImageSharpFixed
         }
       }
