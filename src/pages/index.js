@@ -82,6 +82,7 @@ class IndexPage extends Component {
   render() {
     const { data } = this.props
     console.log(this.state)
+    console.log(data)
     return (
       <>
         <GlobalStyles />
@@ -253,7 +254,7 @@ class IndexPage extends Component {
         />
         <Prototype>
           <div className="diagonal-line" />
-          <h1>Prototype</h1>
+          <h1>Eerste prototype</h1>
           <div className="image-container">
             <div className="images">
               <Img fixed={data.prototypeOne.childImageSharp.fixed} />
@@ -265,115 +266,44 @@ class IndexPage extends Component {
             </div>
           </div>
         </Prototype>
+        <Testing>
+          <h1>Sensor test</h1>
+          <div className="video">
+            <iframe
+              title="mq2 sensor test"
+              width="800"
+              height="400"
+              src="https://www.youtube.com/embed/04uRvb_znwg"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <div className="diagonal-line" />
+        </Testing>
+        <Product>
+          <div className="diagonal-line" />
+          <h1>Interface test</h1>
+          <div className="image-container">
+            <div className="images">
+              <Img fixed={data.testPhotoOne.childImageSharp.fixed} />
+              <Img fixed={data.testPhotoTwo.childImageSharp.fixed} />
+            </div>
+            <div className="images">
+              <Img fixed={data.testPhotoThree.childImageSharp.fixed} />
+              <Img fixed={data.testPhotoFour.childImageSharp.fixed} />
+            </div>
+          </div>
+        </Product>
         <Footer>
           <button onClick={() => this.scrollToTop()}>
-            <i class="arrow-up" />
+            <i className="arrow-up" />
           </button>
         </Footer>
       </>
     )
   }
 }
-
-export const query = graphql`
-  query {
-    teamphoto: file(relativePath: { eq: "teamphoto.JPG" }) {
-      childImageSharp {
-        fixed(width: 450, height: 450) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    blackbox: file(relativePath: { eq: "blackbox.png" }) {
-      childImageSharp {
-        fixed(width: 750, height: 500) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    userjourney: file(relativePath: { eq: "userjourney.png" }) {
-      childImageSharp {
-        fixed(width: 900, height: 450) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    fieldresearchOne: file(relativePath: { eq: "fieldresearch-one.png" }) {
-      childImageSharp {
-        fixed(width: 450, height: 645) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    fieldresearchTwo: file(relativePath: { eq: "fieldresearch-two.png" }) {
-      childImageSharp {
-        fixed(width: 450, height: 645) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    fieldresearchThree: file(relativePath: { eq: "fieldresearch-three.png" }) {
-      childImageSharp {
-        fixed(width: 450, height: 645) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    conceptBlackbox: file(relativePath: { eq: "concept-blackbox.png" }) {
-      childImageSharp {
-        fixed(width: 600, height: 860) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    conceptSlimmeSleutels: file(
-      relativePath: { eq: "concept-slimmesleutel.png" }
-    ) {
-      childImageSharp {
-        fixed(width: 600, height: 860) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    conceptVluchtGadget: file(
-      relativePath: { eq: "concept-vluchtgadget.png" }
-    ) {
-      childImageSharp {
-        fixed(width: 600, height: 860) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    prototypeOne: file(relativePath: { eq: "prototype-one.png" }) {
-      childImageSharp {
-        fixed(width: 555, height: 420) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    prototypeTwo: file(relativePath: { eq: "prototype-two.png" }) {
-      childImageSharp {
-        fixed(width: 555, height: 420) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    prototypeThree: file(relativePath: { eq: "prototype-three.png" }) {
-      childImageSharp {
-        fixed(width: 555, height: 420) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    prototypeFour: file(relativePath: { eq: "prototype-four.png" }) {
-      childImageSharp {
-        fixed(width: 555, height: 420) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`
 
 const Welcome = styled.div`
   display: flex;
@@ -519,6 +449,33 @@ const Concepten = styled.div`
   }
 `
 
+const Testing = styled.div`
+  width: 100%;
+  height: 500px;
+  position: relative;
+  z-index: 10;
+
+  h1 {
+    text-align: center;
+    color: #525fb7;
+    margin-left: 64px;
+  }
+  .diagonal-line {
+    height: 300px;
+    margin: 64px 0;
+    position: relative;
+    background-color: #525fb7;
+    transform: skewY(3deg);
+    z-index: -1;
+  }
+  .video {
+    margin: 24px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+`
+
 const BlackBox = styled.div`
   width: 100%;
   height: 850px;
@@ -526,6 +483,36 @@ const BlackBox = styled.div`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+  }
+`
+
+const Product = styled.div`
+  position: relative;
+  margin-top: 240px;
+  .diagonal-line {
+    margin-top: 120px;
+    height: 200px;
+    background-color: #525fb7;
+    transform: skewY(-3deg);
+    z-index: -1;
+  }
+  h1 {
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-45%);
+  }
+  .image-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .images {
+    margin: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 `
 
@@ -583,6 +570,134 @@ const Footer = styled.div`
     }
     :hover {
       margin: 54px 48px;
+    }
+  }
+`
+
+export const query = graphql`
+  query {
+    teamphoto: file(relativePath: { eq: "teamphoto.jpeg" }) {
+      childImageSharp {
+        fixed(width: 600, height: 450) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    blackbox: file(relativePath: { eq: "blackbox.png" }) {
+      childImageSharp {
+        fixed(width: 750, height: 500) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    userjourney: file(relativePath: { eq: "userjourney.png" }) {
+      childImageSharp {
+        fixed(width: 900, height: 450) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    fieldresearchOne: file(relativePath: { eq: "fieldresearch-one.png" }) {
+      childImageSharp {
+        fixed(width: 450, height: 645) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    fieldresearchTwo: file(relativePath: { eq: "fieldresearch-two.png" }) {
+      childImageSharp {
+        fixed(width: 450, height: 645) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    fieldresearchThree: file(relativePath: { eq: "fieldresearch-three.png" }) {
+      childImageSharp {
+        fixed(width: 450, height: 645) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    conceptBlackbox: file(relativePath: { eq: "concept-blackbox.png" }) {
+      childImageSharp {
+        fixed(width: 600, height: 860) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    conceptSlimmeSleutels: file(
+      relativePath: { eq: "concept-slimmesleutel.png" }
+    ) {
+      childImageSharp {
+        fixed(width: 600, height: 860) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    conceptVluchtGadget: file(
+      relativePath: { eq: "concept-vluchtgadget.png" }
+    ) {
+      childImageSharp {
+        fixed(width: 600, height: 860) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    prototypeOne: file(relativePath: { eq: "prototype-one.png" }) {
+      childImageSharp {
+        fixed(width: 555, height: 420) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    prototypeTwo: file(relativePath: { eq: "prototype-two.png" }) {
+      childImageSharp {
+        fixed(width: 555, height: 420) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    prototypeThree: file(relativePath: { eq: "prototype-three.png" }) {
+      childImageSharp {
+        fixed(width: 555, height: 420) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    prototypeFour: file(relativePath: { eq: "prototype-four.png" }) {
+      childImageSharp {
+        fixed(width: 555, height: 420) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    testPhotoOne: file(relativePath: { eq: "test-setup.png" }) {
+      childImageSharp {
+        fixed(width: 555, height: 420) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    testPhotoTwo: file(relativePath: { eq: "test-user.png" }) {
+      childImageSharp {
+        fixed(width: 555, height: 420) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    testPhotoThree: file(relativePath: { eq: "test-sensor.png" }) {
+      childImageSharp {
+        fixed(width: 555, height: 420) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    testPhotoFour: file(relativePath: { eq: "test-display.png" }) {
+      childImageSharp {
+        fixed(width: 555, height: 420) {
+          ...GatsbyImageSharpFixed
+        }
+      }
     }
   }
 `
