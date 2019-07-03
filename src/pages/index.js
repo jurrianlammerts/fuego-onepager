@@ -14,6 +14,7 @@ import SectionThreeBackground from "../components/svg/sections/sectionThree"
 import IconOne from "../components/svg/icons/one"
 import IconTwo from "../components/svg/icons/two"
 import IconThree from "../components/svg/icons/three"
+import GithubLogo from "../components/svg/github"
 
 const GlobalStyles = createGlobalStyle`
   html {
@@ -111,8 +112,6 @@ class IndexPage extends Component {
 
   render() {
     const { data } = this.props
-    console.log(this.state)
-    console.log(data)
     return (
       <>
         <GlobalStyles />
@@ -364,6 +363,12 @@ class IndexPage extends Component {
           </a>
         </Testing>
         <Footer>
+          <div className="footer-container">
+            <a className="link" href="https://github.com/GuidovdRiet/blackbox">
+              <GithubLogo />
+              Link naar github
+            </a>
+          </div>
           <button onClick={() => this.scrollToTop()}>
             <i className="arrow-up" />
           </button>
@@ -637,8 +642,17 @@ const Footer = styled.div`
   width: 100%;
   height: 200px;
   background-color: #525fb7;
-  position: absolute;
   bottom: 0;
+  position: absolute;
+  a {
+    position: relative;
+    top: 100px;
+    left: 45%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    color: white;
+  }
+
   button {
     position: absolute;
     right: 0;
@@ -823,6 +837,13 @@ export const query = graphql`
         }
       }
     }
+    # github: file(relativePath: { eq: "github.svg" }) {
+    #   childImageSharp {
+    #     fixed(width: 250, height: 250) {
+    #       ...GatsbyImageSharpFixed
+    #     }
+    #   }
+    # }
   }
 `
 
